@@ -1,0 +1,333 @@
+@import "./var";
+@import "./mixins";
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $bodybg;
+  @include flexcenter;
+  overflow: hidden;
+}
+
+.main {
+  position: relative;
+  width: 85%;
+  height: 85%;
+  background: $mainbg;
+  padding: 1rem;
+  border-radius: 10px;
+  @include flexcenter;
+  flex-direction: column;
+  justify-content: stretch;
+  .head {
+    width: 90%;
+    @include flexcenter;
+    justify-content: space-between;
+    color: white;
+    .left {
+      width: 60%;
+      @include flexcenter;
+      justify-content: space-between;
+      .logo {
+        @include font;
+        font-size: 1.3rem;
+        color: $logo;
+        transition: all 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        &:hover {
+          transform: scale(1.3);
+        }
+      }
+      nav {
+        width: 70%;
+      }
+      ul {
+        @include flexcenter;
+        justify-content: space-between;
+        li {
+          text-decoration: none;
+          list-style: none;
+          font-family: helvetica;
+          padding: 5px;
+          color: $logo;
+          transition: all 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+          &:hover {
+            color: white;
+            transform: scale(1.5);
+          }
+        }
+      }
+    }
+  }
+}
+
+nav.right {
+  margin-right: 1rem;
+  flex: 1;
+  height: 100%;
+  @include flexcenter;
+  justify-content: flex-end;
+  .search {
+    @include font;
+    padding: 1rem;
+    margin-right: 1rem;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+  .burger {
+    @include font;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+}
+
+.under {
+  width: 100%;
+  height: 50%;
+  @include flexcenter;
+  justify-content: space-evenly;
+  margin-top: 5rem;
+}
+
+.under > .left {
+  width: 50%;
+  height: 100%;
+  @include flexcenter;
+  flex-direction: column;
+  .first {
+    @include font;
+    font-style: italic;
+    padding: 10px;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    transition: all 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+  .second {
+    @include font;
+    font-family: monospace;
+    padding: 10px;
+    font-size: 4.5rem;
+    color: white;
+    text-align: center;
+    transition: all 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+  .third {
+    @include font;
+    color: $logo;
+    padding: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: all 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+  .fourth {
+    padding: 10px;
+    border: 2px solid white;
+    color: white;
+    border-radius: 1rem;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+
+    margin-top: 1rem;
+    @include font;
+    transition: all 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    &:hover {
+      transform: scale(1.13);
+      background: $logo;
+      color: black;
+    }
+  }
+}
+
+.right {
+  @include flexcenter;
+  width: 40%;
+  height: 100%;
+  justify-content: space-evenly;
+  .img {
+    margin-right: -5rem;
+    img {
+      width: 60%;
+      border-radius: 50%;
+      transition: all 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+      animation-name: rotateimage;
+      animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+      animation-duration: 7s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: forwards;
+      &:hover {
+        transform: scale(1.12);
+      }
+    }
+  }
+}
+
+.social {
+  @include flexcenter;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background: white;
+  padding: 0.2rem;
+  border-radius: 10px;
+  height: 15rem;
+  .link {
+    color: black;
+    padding: 1rem;
+    transition: all 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+    &:hover {
+      transform: scale(2.7);
+    }
+  }
+}
+
+.active {
+  color: white;
+  border-bottom: 3px solid $logo;
+}
+
+// bottom slider section
+
+.bottom {
+  width: 100%;
+  @include flexcenter;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.slider {
+  width: 40%;
+  height: 20%;
+  @include flexcenter;
+  .static {
+    @include flexcenter;
+    height: 100%;
+    width: 100%;
+  }
+  .stuffs {
+    @include flexcenter;
+    .one {
+      @include flexcenter;
+      .img {
+        width: 100%;
+        padding: 10px;
+        transition: all 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        &:hover {
+          transform: scale(1.3);
+        }
+        img {
+          width: 100%;
+          border-radius: 2rem;
+        }
+      }
+      .details {
+        padding: 1rem;
+        font-size: 0.65rem;
+        font-family: helvetica;
+        text-align: center;
+      }
+      .head {
+        @include font;
+        margin-bottom: 5px;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      .bottom {
+        color: white;
+        margin-top: -1px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.prev {
+  margin-left: 2rem;
+  margin-right: 0.5rem;
+}
+.prev,
+.next {
+  color: white;
+  background: $logo;
+  padding: 1rem;
+  transition: all 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  &:hover {
+    background: rgba(236, 236, 56, 0.932);
+    transform: scale(1.2);
+  }
+}
+
+// fixed section
+
+.fixed {
+  width: 40%;
+  .things {
+    @include flexcenter;
+    .thead {
+      @include font;
+      margin-bottom: 5px;
+      color: white;
+    }
+    .down {
+      @include flexcenter;
+      margin-left: 1.5rem;
+      .num {
+        background: rgba(255, 255, 255, 0.384);
+        color: black;
+        padding: 1rem;
+        @include font;
+        margin-bottom: 5px;
+        transition: all 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+        &:hover {
+          background: rgba(216, 216, 14, 0.712);
+          transform: scale(1.2);
+        }
+      }
+      .txt {
+        padding: 1rem;
+        font-size: 0.65rem;
+        font-family: helvetica;
+        color: white;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// color overlay
+
+.overlay {
+  position: absolute;
+  width: 102%;
+  height: 100%;
+  background: $logo;
+  z-index: -100;
+  margin-top: -1rem;
+  border-radius: 2rem;
+}
+
+@keyframes rotateimage {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
